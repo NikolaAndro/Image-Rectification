@@ -11,7 +11,7 @@ References
 """
 from skimage import feature, color, transform, io
 import numpy as np
-import logging
+import logging # this is part of the python standard library since 2.3 version. No need to install separatelly.
 
 
 def compute_edgelets(image, sigma=3):
@@ -525,7 +525,7 @@ def rectify_image(image, clip_factor=6, algorithm='independent',
 
 if __name__ == '__main__':
     import sys
-    image_name = sys.argv[-1]
+    image_name = "images/fish_1.jpg" #sys.argv[-1]
     image = io.imread(image_name)
     print("Rectifying {}".format(image_name))
     save_name = '.'.join(image_name.split('.')[:-1]) + '_warped.png'
